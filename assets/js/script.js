@@ -1,4 +1,4 @@
-let cityName = document.getElementById("search-bar").value;
+let searchbar = document.getElementById("search-bar");
 let submitBtn = document.getElementById("submit-btn");
 
 let latitude;
@@ -7,6 +7,14 @@ let longitude;
 let API_key = "42ed2084f37c9ed9eb1c3d3983b0521e";
 
 "http://api.openweathermap.org/geo/1.0/direct?q=Miami&limit=5&appid=42ed2084f37c9ed9eb1c3d3983b0521e"
+
+let history = [];
+
+function saveToHistory (){
+    let cityName = document.getElementById("search-bar").value;
+    history.push(cityName);
+    console.log(history)
+}
 
 function getLocation (){
     let cityName = document.getElementById("search-bar").value;
@@ -28,7 +36,7 @@ function getLocation (){
             }else{
                 alert("Error: " + response.statusText);
             }
-        })
+        });
 };
 
 
@@ -41,11 +49,14 @@ function getWeather (latitude, longitude) {
                 response.json().then(function(data){
                     console.log(data);
                     console.log(data.city.name);
+                    renderTodaysForecast(data.city.name, data.list[0].main.temp, data.list[0].wind.speed, data.list[0].main.humidity);
                     // Create for loop to get every 8th item in the array. 
                     // This is due to the forecast being every 3 hours. 3 x 8 to get the forecast for each day.
                     for(i=0; i < data.list.length; i+= 8){
-                        console.log(data.list[i])
-                    }
+                        console.log(data.list[i]);
+                        renderWeeklyForecast(data.list[i].main.temp, data.list[i].wind.speed, data.list[i].main.humidity)
+                    };
+                    saveToHistory();
                 })
             }else{
                 alert("Error: " + response.statusText)
@@ -53,7 +64,32 @@ function getWeather (latitude, longitude) {
         })
 
     console.log(apiUrl);
+};
+function renderTodaysForecast(city, temp, wind, humidity){
+    weeklyForecast.textContent = "";
+    
+    document.getElementById("city").textContent = city;
+    document.getElementById("temp").textContent = temp;
+    document.getElementById("wind").textContent = wind;
+    document.getElementById("humidity").textContent = humidity;
 }
+function renderWeeklyForecast(temp, wind, humidity){
+    let card = document.createElement("div");
+    let cardDate = document.createElement("div");
+    let cardImage = document.createElement("img");
+    let cardTemp = document.createElement("div");
+    let cardWind = document.createElement("div");
+    let cardHumidity = document.createElement("div");
+
+    cardTemp.textContent = temp;
+    cardWind.textContent = wind;
+    cardHumidity.textContent = humidity;
+
+    card.append(cardDate, cardImage, cardTemp, cardWind, cardHumidity);
+    weeklyForecast.appendChild(card)
+}
+
+let weeklyForecast = document.getElementById("weekly-forecast");
 
 submitBtn.addEventListener("click", getLocation);
 
