@@ -10,16 +10,26 @@
   <title>Weather Dashboard</title>
 </head>
 <body>
-    <div class="content" id="content">
-        <input type="text" id="search-bar">
-        <input type="submit" id="submit-btn">
-        <h2 id="city"></h2>
-        <p id="temp"></p>
-        <p id="wind"></p>
-        <p id="humidity"></p>
-        <section class="weekly-forecast" id="weekly-forecast"></section>
-        <section id="search-history"></section>
+    <h2>Weather Dashboard</h2>
+
+    <div class="container">
+      <aside>
+        <nav>
+          <input type="text" id="search-bar">
+          <input type="submit" id="submit-btn">
+        </nav>
+        <section class="search-history" id="search-history"></section>
         <button id="clear-history-btn">Clear history</button>
+      </aside>
+      <main>
+        <section class="current-forecast" id="current-forecast">
+          <h2 id="city"></h2>
+          <p id="temp"></p>
+          <p id="wind"></p>
+          <p id="humidity"></p>
+        </section>
+        <section class="daily-forecast" id="daily-forecast"></section>
+      </main>
     </div>
 </body>
 <script src="https://kit.fontawesome.com/178167676b.js" crossorigin="anonymous"></script>

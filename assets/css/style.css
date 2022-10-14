@@ -1,0 +1,13 @@
+body{
+    min-height:100vh;
+}
+.container{
+    display:flex;
+}
+main{
+    display:flex;
+    flex-direction: column;
+}
+h2{
+    font-size:2em;
+}
