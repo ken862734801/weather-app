@@ -94,6 +94,7 @@ function getWeather (latitude, longitude) {
     console.log(apiUrl);
 };
 function renderTodaysForecast(city, temp, wind, humidity){
+    
     weeklyForecast.textContent = "";
 
     document.getElementById("city").textContent = city;
