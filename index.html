@@ -7,13 +7,21 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <link rel="stylesheet" href="./assets/css/reset.css">
   <link rel="stylesheet" href="./assets/css/style.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/css/bootstrap.min.css">
   <title>Weather Dashboard</title>
 </head>
 <body>
-    <input type="text" id="search-bar">
-    <input type="submit" id="submit-btn">
+    <div class="content" id="content">
+        <input type="text" id="search-bar">
+        <input type="submit" id="submit-btn">
+        <h2 id="city"></h2>
+        <p id="temp"></p>
+        <p id="wind"></p>
+        <p id="humidity"></p>
+        <section class="weekly-forecast" id="weekly-forecast">
+
+        </section>
+    </div>
 </body>
-<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+<script src="https://kit.fontawesome.com/178167676b.js" crossorigin="anonymous"></script>
 <script src="./assets/js/script.js"></script>
 </html>
