@@ -9,18 +9,34 @@ let API_key = "42ed2084f37c9ed9eb1c3d3983b0521e";
 "http://api.openweathermap.org/geo/1.0/direct?q=Miami&limit=5&appid=42ed2084f37c9ed9eb1c3d3983b0521e"
 
 let history = [];
+let searchHistory = document.getElementById("search-history");
 
-function saveToHistory (){
-    let cityName = document.getElementById("search-bar").value;
-    history.push(cityName);
+function saveToHistory (city){
+    history.push(city);
     console.log(history)
 }
+function clearHistory (){
+    history.length = 0;
+    searchHistory.textContent = "";
+    console.log(history)
+}
+function renderSearchHistory (){
+    searchHistory = document.getElementById("search-history");
+    searchHistory.textContent = "";
+    for(i =0; i < history.length; i++){
+        let button = document.createElement("button");
+        button.textContent = history[i];
+        searchHistory.appendChild(button)
+    }
+}
+let clearHistoryBtn = document.getElementById("clear-history-btn");
+clearHistoryBtn.addEventListener("click", clearHistory);
 
 function getLocation (){
     let cityName = document.getElementById("search-bar").value;
     
     let apiUrl = "http://api.openweathermap.org/geo/1.0/direct?q=" + cityName + "&limit=5&appid=" + API_key;
-
+    console.log(apiUrl);
     fetch(apiUrl)
         .then(function(response){
             if(response.ok){
@@ -56,7 +72,8 @@ function getWeather (latitude, longitude) {
                         console.log(data.list[i]);
                         renderWeeklyForecast(data.list[i].main.temp, data.list[i].wind.speed, data.list[i].main.humidity)
                     };
-                    saveToHistory();
+                    saveToHistory(data.city.name);
+                    renderSearchHistory()
                 })
             }else{
                 alert("Error: " + response.statusText)
@@ -67,7 +84,7 @@ function getWeather (latitude, longitude) {
 };
 function renderTodaysForecast(city, temp, wind, humidity){
     weeklyForecast.textContent = "";
-    
+
     document.getElementById("city").textContent = city;
     document.getElementById("temp").textContent = temp;
     document.getElementById("wind").textContent = wind;
