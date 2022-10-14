@@ -11,13 +11,17 @@ let API_key = "42ed2084f37c9ed9eb1c3d3983b0521e";
 let history = [];
 let searchHistory = document.getElementById("search-history");
 
+
+
 function saveToHistory (city){
     history.push(city);
+    localStorage.setItem("cities", JSON.stringify(history));
     console.log(history)
 }
 function clearHistory (){
     history.length = 0;
     searchHistory.textContent = "";
+    localStorage.clear();
     console.log(history)
 }
 function renderSearchHistory (){
@@ -28,7 +32,10 @@ function renderSearchHistory (){
         button.textContent = history[i];
         searchHistory.appendChild(button)
     }
-}
+};
+let savedCities = JSON.parse(localStorage.getItem("cities"));
+console.log(savedCities);
+
 let clearHistoryBtn = document.getElementById("clear-history-btn");
 clearHistoryBtn.addEventListener("click", clearHistory);
 
@@ -54,6 +61,10 @@ function getLocation (){
             }
         });
 };
+
+function updateLocation (){
+
+}
 
 
 function getWeather (latitude, longitude) {
