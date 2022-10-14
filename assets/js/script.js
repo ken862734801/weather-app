@@ -6,7 +6,7 @@ let longitude;
 
 let API_key = "42ed2084f37c9ed9eb1c3d3983b0521e";
 
-"http://api.openweathermap.org/geo/1.0/direct?q=Miami&limit=5&appid=42ed2084f37c9ed9eb1c3d3983b0521e"
+"https://api.openweathermap.org/geo/1.0/direct?q=Miami&limit=5&appid=42ed2084f37c9ed9eb1c3d3983b0521e"
 
 let history = [];
 let searchHistory = document.getElementById("search-history");
@@ -42,7 +42,7 @@ clearHistoryBtn.addEventListener("click", clearHistory);
 function getLocation (){
     let cityName = document.getElementById("search-bar").value;
     
-    let apiUrl = "http://api.openweathermap.org/geo/1.0/direct?q=" + cityName + "&limit=5&appid=" + API_key;
+    let apiUrl = "https://api.openweathermap.org/geo/1.0/direct?q=" + cityName + "&limit=5&appid=" + API_key;
     console.log(apiUrl);
     fetch(apiUrl)
         .then(function(response){
@@ -68,7 +68,7 @@ function updateLocation (){
 
 
 function getWeather (latitude, longitude) {
-    let apiUrl = "http://api.openweathermap.org/data/2.5/forecast?lat=" + latitude + "&lon=" + longitude + "&appid=" + API_key + "&cnt=40&units=imperial ";
+    let apiUrl = "https://api.openweathermap.org/data/2.5/forecast?lat=" + latitude + "&lon=" + longitude + "&appid=" + API_key + "&cnt=40&units=imperial ";
 
     fetch(apiUrl)
         .then(function(response){
