@@ -40,13 +40,11 @@ navbar{
     letter-spacing: 3px;
     margin-bottom:-90px;
     text-align: center;
-    padding-bottom:20px;
 }
 figure{
     display: flex;
     justify-content: center;
     margin-bottom:25px;
-    margin-top:10px;
     padding-bottom:15px;
 }
 figure > img {
@@ -124,11 +122,11 @@ section{
 }
 .day, .time{
     font-weight: bold;
-    font-size:1.20em;
+    font-size:1.10em;
     letter-spacing: 5px;
     border-top:1px solid rgb(160, 159, 159);
     width:60%;
-    padding:15px;
+    padding:8px;
     margin: 0 auto;
     margin-top:20px;
 }
