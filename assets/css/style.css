@@ -23,6 +23,7 @@ navbar{
     font-weight: bold;
     letter-spacing: 2px;
     padding-top:10px;
+    text-align: center;
 }
 .city-name{
     margin-top:40px;
@@ -67,7 +68,7 @@ section{
     justify-content: flex-end;
     padding:30px;
     padding-top:50px;
-    margin-bottom:-40px;
+    margin-bottom:-50px;
 
 }
 #temperature{
@@ -106,7 +107,7 @@ section{
     margin-bottom:-20px;
 }
 .row > p{
-    font-size: 0.70em;
+    font-size: 0.75em;
 }
 .feels-like{
     margin-left:8px;
@@ -118,7 +119,7 @@ section{
     margin-left:17px;
 }
 .wind{
-    margin-left: 43px;
+    margin-left: 44px;
 }
 .day, .time{
     font-weight: bold;
