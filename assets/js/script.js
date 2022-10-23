@@ -56,10 +56,10 @@ function getWeather (latitude, longitude){
             if(response.ok){
                 response.json().then(function(data){
                     console.log(data);
-                    renderCurrentForecast(data.city.name, data.list[0].main.temp, data.list[0].wind.speed, data.list[0].main.humidity);
+                    renderCurrentForecast(data.city.name, data.list[0].weather[0].icon, data.list[0].main.temp, data.list[0].wind.speed, data.list[0].main.humidity);
                     for(i=0; i < data.list.length; i+=8){
                         console.log(data.list[i]);
-                        renderDailyForecast(data.list[i].main.temp, data.list[i].wind.speed, data.list[i].main.humidity);
+                        renderDailyForecast(data.list[i].main.temp, data.list[i].weather[0].icon, data.list[i].wind.speed, data.list[i].main.humidity);
                     };
                         saveToHistory(data.city.name);
                         renderSearchHistory();
@@ -70,18 +70,19 @@ function getWeather (latitude, longitude){
         })
 
 };
-function renderCurrentForecast(city, temp, wind, humidity){
+function renderCurrentForecast(city, icon, temp, wind, humidity){
 
     dailyForecast.textContent = "";
     
     document.getElementById("city").textContent = city;
+    document.getElementById("icon").src = "./assets/images/" + icon + "-large.png";
     document.getElementById("temp").textContent = temp;
     document.getElementById("wind").textContent = wind;
     document.getElementById("humidity").textContent = humidity;
 
 }
 
-function renderDailyForecast(temp, wind, humidity){
+function renderDailyForecast(temp, icon, wind, humidity){
 
     let card = document.createElement("div");
     let cardDate = document.createElement("div");
@@ -91,6 +92,7 @@ function renderDailyForecast(temp, wind, humidity){
     let cardHumidity = document.createElement("div");
 
     cardTemp.textContent = temp;
+    cardImage.src = "./assets/images/" + icon + ".png";
     cardWind.textContent = wind;
     cardHumidity.textContent = humidity;
 
