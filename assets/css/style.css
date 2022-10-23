@@ -47,7 +47,9 @@ figure{
     margin-top:-5px;
     padding-bottom:15px;
 }
-
+figure > img {
+    width:350px;
+}
 section{
     display: flex;
     justify-content: center;
