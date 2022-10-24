@@ -31,7 +31,7 @@ navbar{
     font-size: 1.15em;
     font-weight: bold;
     letter-spacing: 3px;
-    margin-bottom:-90px;
+    margin-bottom:-70px;
     text-align: center;
 }
 figure{
@@ -51,7 +51,7 @@ section{
     margin-top:-135px;
     display:flex;
     align-items: center;
-    padding-bottom:20px;
+    padding-bottom:25px;
 }
 
 .temperature-display{
@@ -114,12 +114,12 @@ section{
     margin-left: 46px;
 }
 .day, .time{
+    font-size: 1.15em;
     font-weight: bold;
-    font-size:1.10em;
-    letter-spacing: 5px;
+    letter-spacing: 3px;
     border-top:1px solid rgb(160, 159, 159);
     width:60%;
-    padding:8px;
+    padding:16px;
     margin: 0 auto;
     margin-top:20px;
 }
