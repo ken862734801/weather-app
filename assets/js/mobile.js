@@ -12,12 +12,12 @@ let searchBar = document.getElementById("searchbar");
 let search_label = document.querySelector(".search-label");
 let search_input = document.querySelector("#search-input");
 
-search_label.addEventListener("click", function (){
-    searchBar.classList.toggle("collapsed");
-})
+// search_label.addEventListener("click", function (){
+//     searchBar.classList.toggle("collapsed");
+// })
 
-search_input.addEventListener("keydown", function(e){
-    if(e.key === "enter"){
-       console.log("Click!")
-    }
-})
+// search_input.addEventListener("keydown", function(e){
+//     if(e.key === "enter"){
+//        console.log("Click!")
+//     }
+// })
