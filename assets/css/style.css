@@ -41,7 +41,7 @@ figure{
     padding-bottom:15px;
 }
 figure > img {
-    width:450px;
+    width:425px;
 }
 section{
     display: flex;
@@ -119,7 +119,7 @@ section{
     letter-spacing: 3px;
     border-top:1px solid rgb(160, 159, 159);
     width:60%;
-    padding:16px;
+    padding:12px;
     margin: 0 auto;
     margin-top:20px;
 }
