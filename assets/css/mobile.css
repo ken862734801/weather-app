@@ -124,7 +124,7 @@ section{
     letter-spacing: 5px;
     border-top:1px solid rgb(160, 159, 159);
     width:60%;
-    padding:15px;
+    padding:10px;
     margin: 0 auto;
     margin-top:20px;
 }
@@ -132,4 +132,23 @@ section{
     margin-top:-5px;
 }
 
-
+/* Temporary CSS for side nav.
+.nav{
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: #111;
+    overflow-x: hidden;
+    transition: 0.5s;
+    padding-top: 60px;
+}
+.nav .closebtn {
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 36px;
+    margin-left: 50px;
+  } */
