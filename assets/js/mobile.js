@@ -36,6 +36,12 @@ function closeSearch (){
 
 };
 
+function search(ele) {
+    if(event.key === 'Enter') {
+        console.log(ele.value);        
+    }
+};
+
 /* Open the sidenav */
 function openNav() {
     document.getElementById("mySidenav").style.width = "100%";
