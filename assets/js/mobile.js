@@ -33,6 +33,7 @@ function openSearch (){
 
 function closeSearch (){
     document.getElementById("searchNav").style.height = "0";
+
 };
 
 /* Open the sidenav */
