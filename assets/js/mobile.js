@@ -14,6 +14,7 @@ let searchBar = document.getElementById("searchbar");
 let search_label = document.querySelector(".search-label");
 let search_input = document.querySelector("#search-input");
 
+let container = document.getElementById("container");
 let plus = document.querySelector(".plus");
 
 let closeSearchBtn = document.getElementById("close-search");
@@ -36,7 +37,8 @@ function closeSearch (){
 
 /* Open the sidenav */
 function openNav() {
-    document.getElementById("mySidenav").style.width = "100%";
+    document.getElementById("mySidenav").style.width = "100vw";
+
   }
   
   /* Close/hide the sidenav */
