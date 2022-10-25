@@ -216,11 +216,13 @@ section{
   .grid-container{
     width:100%;
     display:flex;
-    padding-right:100px;
+    padding-left:15px;
     flex-wrap: wrap;
   }
   .grid-item{
-    width:200px;
+    width:175px;
+    cursor:pointer;
+    margin:4px;
   }
   .item-header{
     text-align: center;
