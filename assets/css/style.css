@@ -213,4 +213,18 @@ section{
     display:flex;
     justify-content: flex-end;
   }
- 
+  .grid-item{
+    width:200px;
+  }
+  .item-header{
+    text-align: center;
+    font-size:0.80em;
+  }
+ .item-image > img{
+    width:200px;
+    margin-top:-50px;
+ }
+ .item-temp{
+    text-align: center;
+    margin-top:-60px;
+ }
