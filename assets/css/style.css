@@ -159,7 +159,6 @@ section{
     height:0;
     bottom:0;
     left:0;
-    z-index:1;
     background-color: white; 
     transition: 0.3s; 
   }
