@@ -213,16 +213,22 @@ section{
     display:flex;
     justify-content: flex-end;
   }
+  .grid-container{
+    width:100%;
+    display:flex;
+    padding-right:100px;
+    flex-wrap: wrap;
+  }
   .grid-item{
     width:200px;
   }
   .item-header{
     text-align: center;
-    font-size:0.80em;
+    font-size:0.70em;
   }
  .item-image > img{
-    width:200px;
-    margin-top:-50px;
+    width:150px;
+    margin-top:-35px;
  }
  .item-temp{
     text-align: center;
