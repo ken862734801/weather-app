@@ -14,6 +14,9 @@ let searchBar = document.getElementById("searchbar");
 let search_label = document.querySelector(".search-label");
 let search_input = document.querySelector("#search-input");
 
+let plus = document.querySelector(".plus");
+
+let closeSearchBtn = document.getElementById("close-search");
 // search_label.addEventListener("click", function (){
 //     searchBar.classList.toggle("collapsed");
 // })
@@ -23,6 +26,13 @@ let search_input = document.querySelector("#search-input");
 //        console.log("Click!")
 //     }
 // })
+function openSearch (){
+    document.getElementById("searchNav").style.height = "100%";
+};
+
+function closeSearch (){
+    document.getElementById("searchNav").style.height = "0";
+};
 
 /* Open the sidenav */
 function openNav() {
@@ -36,3 +46,7 @@ function openNav() {
 
   menuBars.addEventListener("click", openNav);
   closeBtn.addEventListener("click", closeNav);
+
+  plus.addEventListener("click", openSearch);
+  closeSearchBtn.addEventListener("click", closeSearch)
+
