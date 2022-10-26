@@ -16,6 +16,8 @@ let search_input = document.querySelector("#search-input");
 
 let container = document.getElementById("container");
 let plus = document.querySelector(".plus");
+let searchNav = document.getElementById("searchNav");
+
 
 let closeSearchBtn = document.getElementById("close-search");
 // search_label.addEventListener("click", function (){
@@ -29,18 +31,35 @@ let closeSearchBtn = document.getElementById("close-search");
 // })
 function openSearch (){
     document.getElementById("searchNav").style.height = "100%";
+    setTimeout(() => {
+        container.style.display = "none";;
+      }, 150);
 };
 
 function closeSearch (){
     document.getElementById("searchNav").style.height = "0";
+        container.style.display = "block";;
 
 };
 
-function search(ele) {
-    if(event.key === 'Enter') {
-        console.log(ele.value);        
+let API_key = "42ed2084f37c9ed9eb1c3d3983b0521e";
+let latitude;
+let longitude;
+let cityName;
+
+// function search(ele) {
+//     if(event.key === 'Enter') {
+//         cityName = ele.value;
+//         search_input.value = ""; 
+//         getLocation(cityName) ;
+//     }
+// };
+
+search_input.addEventListener("keyup", function(event) {
+    if (event.key === "Enter") {
+        getLocation(search_input.value)
     }
-};
+});
 
 /* Open the sidenav */
 function openNav() {
@@ -59,3 +78,20 @@ function openNav() {
   plus.addEventListener("click", openSearch);
   closeSearchBtn.addEventListener("click", closeSearch)
 
+  function getLocation (city){
+    let apiUrl = "https://api.openweathermap.org/geo/1.0/direct?q=" + city + "&limit=5&appid=" + API_key;
+
+    fetch(apiUrl)
+        .then(function(response){
+            if(response.ok){
+                response.json().then(function(data){
+                    latitude = data[0].lat;
+                    longitude = data[0].lon;
+                    console.log(city)
+                    console.log(latitude, longitude)
+                })
+            }else{
+                alert("Error: " + response.statusText);
+            }
+        })
+};
