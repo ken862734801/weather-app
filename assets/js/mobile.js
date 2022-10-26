@@ -10,6 +10,7 @@ let humidity = document.getElementById("humidity");
 let wind = document.getElementById("wind");
 let pressure = document.getElementById("pressure");
 let day = document.getElementById("day");
+let time = document.getElementById("time");
 
 let menuBars = document.querySelector(".menu-bars");
 let closeBtn = document.getElementById("close-btn");
@@ -66,7 +67,6 @@ search_input.addEventListener("keyup", function(event) {
         search_input.value = "";
         setTimeout(() => {
             closeSearch();
-            window.scrollTo(0, 0);
           }, 500);
     }
 });
@@ -142,9 +142,22 @@ function renderCurrentForecast (data) {
     wind.textContent = `${data.list[0].wind.speed.toFixed()} mph`;
     pressure.textContent = `${data.list[0].main.pressure}`
 
+    let currentTime = new Date(data.list[0].dt * 1000);
+    let hour = currentTime.getHours();
+    setMessage(hour);
+    
+};
+function setMessage (hour){
+    if(hour < 12){
+        time.textContent = "MORNING";
+    }else if (hour < 18){
+        time.textContent = "AFTERNOON";
+    }else{
+        time.textContent = "EVENING";
+    }
 };
 
-// getLocation("Miami");
+getLocation("Miami");
 
 let gridItems = document.querySelectorAll(".grid-item");
 // gridItems[i].firstElementChild.textContent
