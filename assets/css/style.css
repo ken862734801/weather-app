@@ -20,7 +20,7 @@ navbar{
 } 
 
 #city{
-    font-size:0.90em;
+    font-size:1.00em;
     font-weight: bold;
     letter-spacing: 2px;
     padding-top:10px;
@@ -118,12 +118,12 @@ section{
     margin-left: 46px;
 }
 .day, .time{
-    font-size: 1.05em;
+    font-size: 1.00em;
     font-weight: bold;
     letter-spacing: 3px;
     border-top:1px solid rgb(160, 159, 159);
     width:60%;
-    padding:8px;
+    padding:7px;
     margin: 0 auto;
     margin-top:15px;
     text-transform:uppercase ;
@@ -236,7 +236,7 @@ section{
  }
  .date{
     text-align:center;
-    font-size:0.90em;
+    font-size:0.95em;
     font-weight: bold;
     letter-spacing: 2px;
  }

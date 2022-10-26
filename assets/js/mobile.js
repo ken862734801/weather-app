@@ -68,7 +68,7 @@ search_input.addEventListener("keyup", function(event) {
         saveSearch(city_name)
         search_input.value = "";
         closeSearch();
-        //   window.scrollTo(0, 0);
+        window.scrollTo(0, 0);
     }
 });
 
