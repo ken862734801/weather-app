@@ -67,7 +67,7 @@ search_input.addEventListener("keyup", function(event) {
         setTimeout(() => {
             closeSearch();
             window.scrollTo(0, 0);
-          }, 175);
+          }, 500);
     }
 });
 
@@ -145,3 +145,15 @@ function renderCurrentForecast (data) {
 };
 
 // getLocation("Miami");
+
+let gridItems = document.querySelectorAll(".grid-item");
+// gridItems[i].firstElementChild.textContent
+console.log(gridItems.length)
+
+gridItems.forEach(gridItem =>{
+    gridItem.addEventListener("click", ()=>{
+        console.log(gridItem.firstElementChild.textContent);
+        getLocation(gridItem.firstElementChild.textContent);
+        closeNav();
+    })
+})
