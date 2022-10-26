@@ -63,11 +63,14 @@ let cityName;
 
 search_input.addEventListener("keyup", function(event) {
     if (event.key === "Enter") {
-        getLocation(search_input.value)
+        let city_name = search_input.value.toLowerCase();
+        getLocation(city_name)
+        saveSearch(city_name)
         search_input.value = "";
         setTimeout(() => {
             closeSearch();
           }, 500);
+          window.scrollTo(0, 0);
     }
 });
 
@@ -142,20 +145,20 @@ function renderCurrentForecast (data) {
     wind.textContent = `${data.list[0].wind.speed.toFixed()} mph`;
     pressure.textContent = `${data.list[0].main.pressure}`
 
-    let currentTime = new Date(data.list[0].dt * 1000);
-    let hour = currentTime.getHours();
-    setMessage(hour);
+    // let currentTime = new Date(data.list[0].dt * 1000);
+    // let hour = currentTime.getHours();
+    // setMessage(hour);
     
 };
-function setMessage (hour){
-    if(hour < 12){
-        time.textContent = "MORNING";
-    }else if (hour < 18){
-        time.textContent = "AFTERNOON";
-    }else{
-        time.textContent = "EVENING";
-    }
-};
+// function setMessage (hour){
+//     if(hour < 12){
+//         time.textContent = "MORNING";
+//     }else if (hour < 18){
+//         time.textContent = "AFTERNOON";
+//     }else{
+//         time.textContent = "EVENING";
+//     }
+// };
 
 // getLocation("Miami");
 
@@ -183,3 +186,12 @@ const formattedToday = mm + '/' + dd
 document.getElementById('date').textContent = formattedToday;
 
 let searches = [];
+
+function saveSearch (city){
+    if(searches.includes(city)){
+        return
+    }else {
+        searches.push(city);
+        console.log(searches);
+    }
+};
