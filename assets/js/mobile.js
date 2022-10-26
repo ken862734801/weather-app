@@ -103,6 +103,7 @@ function openNav() {
                     console.log(city)
                     console.log(latitude, longitude)
                     getWeather(latitude, longitude)
+                    return {latitude, longitude}
                 })
             }else{
                 alert("Error: " + response.statusText);
@@ -192,6 +193,48 @@ function saveSearch (city){
         return
     }else {
         searches.push(city);
+        for(i = 0; i < searches.length; i++){
+            getSavedLocation(searches[i]);
+        }
         console.log(searches);
     }
+};
+
+function renderSavedForecast(city){
+    getSavedLocation(city);
+}
+
+
+function getSavedLocation (city){
+    let apiUrl = "https://api.openweathermap.org/geo/1.0/direct?q=" + city + "&limit=5&appid=" + API_key;
+
+    fetch(apiUrl)
+        .then(function(response){
+            if(response.ok){
+                response.json().then(function(data){
+                    latitude = data[0].lat;
+                    longitude = data[0].lon;
+                    console.log(city)
+                    console.log(latitude, longitude)
+                    getSavedWeather(latitude, longitude)
+                })
+            }else{
+                alert("Error: " + response.statusText);
+            }
+        })
+};
+
+function getSavedWeather (latitude, longitude){
+    let apiUrl = "https://api.openweathermap.org/data/2.5/forecast?lat=" + latitude + "&lon=" + longitude + "&appid=" + API_key + "&cnt=10&units=imperial ";
+
+    fetch(apiUrl)
+        .then(function(response){
+            if(response.ok){
+                response.json().then(function(data){
+                    console.log(data);
+                })
+            }else{
+                alert("Error: " + response.statusText)
+            }
+        })
 };
