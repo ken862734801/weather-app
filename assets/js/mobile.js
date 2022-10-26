@@ -1,10 +1,15 @@
 // Variables for the DOM elements.
 let city = document.getElementById("city");
+let weather = document.getElementById("weather");
+let icon = document.getElementById("icon");
 let temperature = document.getElementById("temperature");
+let tempMax = document.getElementById("temp-max");
+let tempMin = document.getElementById("temp-min");
 let feels_like = document.getElementById("feels-like");
 let humidity = document.getElementById("humidity"); 
 let wind = document.getElementById("wind");
-let visibility = document.getElementById("visibility");
+let pressure = document.getElementById("pressure");
+let day = document.getElementById("day");
 
 let menuBars = document.querySelector(".menu-bars");
 let closeBtn = document.getElementById("close-btn");
@@ -59,6 +64,7 @@ search_input.addEventListener("keyup", function(event) {
     if (event.key === "Enter") {
         getLocation(search_input.value)
         search_input.value = "";
+        closeSearch();
     }
 });
 
@@ -90,9 +96,49 @@ function openNav() {
                     longitude = data[0].lon;
                     console.log(city)
                     console.log(latitude, longitude)
+                    getWeather(latitude, longitude)
                 })
             }else{
                 alert("Error: " + response.statusText);
             }
         })
 };
+
+function getWeather (latitude, longitude){
+    let apiUrl = "https://api.openweathermap.org/data/2.5/forecast?lat=" + latitude + "&lon=" + longitude + "&appid=" + API_key + "&cnt=40&units=imperial ";
+
+    fetch(apiUrl)
+        .then(function(response){
+            if(response.ok){
+                response.json().then(function(data){
+                    console.log(data);
+                    renderCurrentForecast(data)
+                })
+            }else{
+                alert("Error: " + response.statusText)
+            }
+        })
+};
+
+// Method to get the day.
+var objToday = new Date();
+weekday = new Array('Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday');
+dayOfWeek = weekday[objToday.getDay()];
+day.textContent = dayOfWeek;
+
+function renderCurrentForecast (data) {
+
+    city.textContent = data.city.name;
+    weather.textContent = data.list[0].weather[0].main;
+    // icon.src = "./assets/images/" + data.list[0].weather[0].icon + "-large.png";
+    temperature.textContent = data.list[0].main.temp.toFixed();
+    tempMin.innerHTML = `<span class="arrow"> &#9660; </span> ${data.list[0].main.temp_min.toFixed()} &#176;`
+    tempMax.innerHTML = `<span class="arrow"> &#9650; </span> ${data.list[0].main.temp_max.toFixed()} &#176;`
+    feels_like.innerHTML = `${data.list[0].main.feels_like.toFixed()}  &#176;`
+    humidity.textContent = `${data.list[0].main.humidity} %`
+    wind.textContent = `${data.list[0].wind.speed.toFixed()} mph`;
+    pressure.textContent = `${data.list[0].main.pressure}`
+
+};
+
+// getLocation("Miami");
