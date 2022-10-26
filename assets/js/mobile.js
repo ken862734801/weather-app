@@ -65,6 +65,7 @@ search_input.addEventListener("keyup", function(event) {
         getLocation(search_input.value)
         search_input.value = "";
         closeSearch();
+        window.scrollTo(0, 0);
     }
 });
 
