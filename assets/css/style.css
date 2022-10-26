@@ -198,11 +198,13 @@ section{
   }
   .side-title{
     font-size:0.85em;
-    margin-top:15px;
-    margin-bottom:-6px;
+    margin-bottom:-25px;
     font-weight: bold;
     letter-spacing: 2px;
     text-align: center;
+    /* border:1px solid red; */
+    width:80%;
+    margin: 15px auto;
   }
   .grid-container{
     width:90%;

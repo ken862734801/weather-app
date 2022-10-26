@@ -67,9 +67,7 @@ search_input.addEventListener("keyup", function(event) {
         getLocation(city_name)
         saveSearch(city_name)
         search_input.value = "";
-        setTimeout(() => {
-            closeSearch();
-          }, 500);
+        closeSearch();
         //   window.scrollTo(0, 0);
     }
 });
@@ -200,10 +198,6 @@ function saveSearch (city){
     }
 };
 
-function renderSavedForecast(city){
-    getSavedLocation(city);
-}
-
 
 function getSavedLocation (city){
     let apiUrl = "https://api.openweathermap.org/geo/1.0/direct?q=" + city + "&limit=5&appid=" + API_key;
@@ -237,4 +231,8 @@ function getSavedWeather (latitude, longitude){
                 alert("Error: " + response.statusText)
             }
         })
+};
+
+function renderSavedCity(data){
+
 };
