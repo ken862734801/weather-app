@@ -118,13 +118,12 @@ section{
     margin-left: 46px;
 }
 .day, .time{
-    font-size: 1.15em;
+    font-size: 1.00em;
     font-weight: bold;
     letter-spacing: 3px;
     border-top:1px solid rgb(160, 159, 159);
-    border-bottom:1px solid rgb(160, 159, 159);
     width:60%;
-    padding:10px;
+    padding:6px;
     margin: 0 auto;
     margin-top:15px;
     text-transform:uppercase ;
@@ -183,6 +182,7 @@ section{
     padding:4px;
     margin-top:5px;
     border:1px solid red;
+    font-size:16px;
   }
   .search-icon{
     margin-top:5px;
