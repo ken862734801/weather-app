@@ -20,7 +20,7 @@ navbar{
 } 
 
 #city{
-    font-size:1.00em;
+    font-size: 1.10em;
     font-weight: bold;
     letter-spacing: 2px;
     padding-top:10px;
@@ -30,7 +30,7 @@ navbar{
 }
 
 .weather{
-    font-size: 1.15em;
+    font-size: 1.10em;
     font-weight: bold;
     letter-spacing: 3px;
     margin-bottom:-70px;
