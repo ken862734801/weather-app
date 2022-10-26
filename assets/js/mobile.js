@@ -108,7 +108,7 @@ function openNav() {
 };
 
 function getWeather (latitude, longitude){
-    let apiUrl = "https://api.openweathermap.org/data/2.5/forecast?lat=" + latitude + "&lon=" + longitude + "&appid=" + API_key + "&cnt=40&units=imperial ";
+    let apiUrl = "https://api.openweathermap.org/data/2.5/forecast?lat=" + latitude + "&lon=" + longitude + "&appid=" + API_key + "&cnt=10&units=imperial ";
 
     fetch(apiUrl)
         .then(function(response){
@@ -157,7 +157,7 @@ function setMessage (hour){
     }
 };
 
-getLocation("Miami");
+// getLocation("Miami");
 
 let gridItems = document.querySelectorAll(".grid-item");
 // gridItems[i].firstElementChild.textContent
@@ -170,3 +170,14 @@ gridItems.forEach(gridItem =>{
         closeNav();
     })
 })
+
+const today = new Date();
+let mm = today.getMonth() + 1; // Months start at 0!
+let dd = today.getDate();
+
+if (dd < 10) dd = '0' + dd;
+if (mm < 10) mm = '0' + mm;
+
+const formattedToday = mm + '/' + dd 
+
+document.getElementById('date').textContent = formattedToday;

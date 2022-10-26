@@ -220,6 +220,12 @@ section{
     font-weight: bold;
     margin-top:-55px;
  }
+ .date{
+    text-align:center;
+    font-size:0.80em;
+    font-weight: bold;
+    letter-spacing: 2px;
+ }
 
  @media screen and (-webkit-min-device-pixel-ratio:0) { 
     select,
