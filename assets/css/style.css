@@ -118,12 +118,12 @@ section{
     margin-left: 46px;
 }
 .day, .time{
-    font-size: 1.00em;
+    font-size: 1.05em;
     font-weight: bold;
     letter-spacing: 3px;
     border-top:1px solid rgb(160, 159, 159);
     width:60%;
-    padding:6px;
+    padding:8px;
     margin: 0 auto;
     margin-top:15px;
     text-transform:uppercase ;
@@ -172,6 +172,8 @@ section{
     justify-content: flex-end;
     align-items: center;
     padding-top:15px;
+    margin-right:20px;
+
   }
   #magnifying-glass{
     width:28px;
@@ -181,8 +183,9 @@ section{
     width:250px;
     padding:4px;
     margin-top:5px;
-    border:1px solid red;
+    border:1px solid black;
     font-size:16px;
+    margin-left:40px;
   }
   .search-icon{
     margin-top:5px;
