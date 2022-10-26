@@ -64,8 +64,10 @@ search_input.addEventListener("keyup", function(event) {
     if (event.key === "Enter") {
         getLocation(search_input.value)
         search_input.value = "";
-        closeSearch();
-        window.scrollTo(0, 0);
+        setTimeout(() => {
+            closeSearch();
+            window.scrollTo(0, 0);
+          }, 175);
     }
 });
 
@@ -131,7 +133,7 @@ function renderCurrentForecast (data) {
 
     city.textContent = data.city.name;
     weather.textContent = data.list[0].weather[0].main;
-    // icon.src = "./assets/images/" + data.list[0].weather[0].icon + "-large.png";
+    icon.src = "./assets/images/" + data.list[0].weather[0].icon + "-large.png";
     temperature.textContent = data.list[0].main.temp.toFixed();
     tempMin.innerHTML = `<span class="arrow"> &#9660; </span> ${data.list[0].main.temp_min.toFixed()} &#176;`
     tempMax.innerHTML = `<span class="arrow"> &#9650; </span> ${data.list[0].main.temp_max.toFixed()} &#176;`
