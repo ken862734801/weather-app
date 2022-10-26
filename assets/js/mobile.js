@@ -58,6 +58,7 @@ let cityName;
 search_input.addEventListener("keyup", function(event) {
     if (event.key === "Enter") {
         getLocation(search_input.value)
+        search_input.value = "";
     }
 });
 

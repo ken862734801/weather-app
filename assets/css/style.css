@@ -154,20 +154,21 @@ section{
     margin-top:-40px;
   }
   #searchNav{ 
-    position:fixed;
-    height:0px;
+    position:absolute;
+    height:0;
     width:100%;
     bottom:0;
     background-color: white; 
     transition: 0.3s; 
+    overflow-x: hidden;
   }
   .search-container{
     width:90%;
-    padding-top:10px;
     margin: 0 auto;
     display:flex;
     justify-content: flex-end;
     align-items: center;
+    padding-top:15px;
   }
   #magnifying-glass{
     width:28px;
