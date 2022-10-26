@@ -196,6 +196,14 @@ section{
     padding-top:5px;
     padding-right:19px;
   }
+  .side-title{
+    font-size:0.85em;
+    margin-top:15px;
+    margin-bottom:-6px;
+    font-weight: bold;
+    letter-spacing: 2px;
+    text-align: center;
+  }
   .grid-container{
     width:90%;
     display:flex;
