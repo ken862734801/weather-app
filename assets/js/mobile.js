@@ -162,17 +162,6 @@ function setMessage (hour){
 
 // getLocation("Miami");
 
-let gridItems = document.querySelectorAll(".grid-item");
-// gridItems[i].firstElementChild.textContent
-console.log(gridItems.length)
-
-gridItems.forEach(gridItem =>{
-    gridItem.addEventListener("click", ()=>{
-        console.log(gridItem.firstElementChild.textContent);
-        getLocation(gridItem.firstElementChild.textContent);
-        closeNav();
-    })
-})
 
 const today = new Date();
 let mm = today.getMonth() + 1; // Months start at 0!
@@ -190,12 +179,21 @@ let searches = [];
 function saveSearch (city){
     if(searches.includes(city)) {
         return    
-    }else if(searches.length === 7){
-        return
+    }else if(searches.length === 6){
+        searches.splice(5,1);
+        searches.unshift(city);
+        gridContainer.textContent = "";
+        for(i =0; i < searches.length; i++){
+            getSavedLocation(searches[i]);
+            console.log(searches)
+        }
     }else{
         searches.unshift(city);
-        getSavedLocation(searches[0]);
-        console.log(searches);
+        gridContainer.textContent = "";
+        for(i =0; i < searches.length; i++){
+            getSavedLocation(searches[i]);
+            console.log(searches)
+        }
     }
 }
 
@@ -226,6 +224,7 @@ function getSavedWeather (latitude, longitude){
                 response.json().then(function(data){
                     console.log(data);
                     renderSavedCity(data);
+
                 })
             }else{
                 alert("Error: " + response.statusText)
@@ -255,7 +254,14 @@ function renderSavedCity(data){
 
     gridContainer.appendChild(widget);
     widget.append(widgetHeader, widgetFigure, widgetTemp);
+
+    widget.addEventListener("click", function(){
+        getLocation(widgetHeader.textContent);
+        closeNav();
+    })
 };
+
+
 
 function setEmptyMessage(){
     
@@ -286,3 +292,19 @@ function showResults(val) {
   }
   res.innerHTML = '<ul>' + list + '</ul>';
 }
+
+// gridItems[i].firstElementChild.textContent
+
+
+
+let sideNav = document.getElementById("mySidenav");
+let gridContainer = document.getElementById("grid-container");
+
+gridContainer.addEventListener("click", function(e){
+    if(e.target.className === "grid-item"){
+        console.log("Click!")
+        console.log(e.target.firstElementChild.textContent);
+    }else{
+        return
+    }
+})

@@ -1,14 +1,50 @@
 #result {
     padding: 3px;
+    overflow-y: scroll;
+    max-height:50vh;
   }
-  #result ul {
+  #result li {
     list-style-type: none;
+    border-bottom:1px solid rgb(160, 159, 159);
     padding: 0;
     margin: 0;
   }
-  #result ul li {
+  #result li {
     padding: 5px 0;
+    width:80%;
   }
-  #result ul li:hover {
+  #result li:hover {
     background: #eee;
   }
+  .hide{
+    display:none;
+  }
+  .suggestion{
+    font-family: 'Comfortaa', cursive;
+    font-size:0.90em;
+    margin-bottom:10px;
+    margin-top:5px;
+  }
+  body{
+    padding:10px;
+  }
+  /* #input{
+    width:75%;
+    font-size:1em;
+    width: 195px;
+    height: 20px;
+  } */
+  header{
+    background-color: white;
+    position:sticky;
+    max-height:50px;
+    padding:8px;
+    display:flex;
+  }
+  #input::-webkit-search-cancel-button{
+    height: 20px;
+    width: 20px;
+    border-radius:10px;
+    background: black;
+    color:white;
+}

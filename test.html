@@ -5,12 +5,15 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="test.css">
+    <link href="https://fonts.googleapis.com/css2?family=Abel&family=Comfortaa&display=swap" rel="stylesheet">
     <title>Document</title>
 </head>
 <body>
-    <form autocomplete="off"><input type="text" name="q" id="q" onKeyUp="showResults(this.value)" autofocus />
-        <div id="result"></div>
-    </form>
+    <header>
+        <input type="search" name="q" id="input" onKeyUp="showResults(this.value)" placeholder="Search for a city"autofocus />
+        <p>Cancel</p>
+    </header>
+    <div id="result"></div>
 </body>
 <script src="./assets/js/test.js"></script>
-</html>
+<!-- </html> -->

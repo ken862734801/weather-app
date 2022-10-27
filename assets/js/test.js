@@ -1,57 +1,57 @@
-const options = {
-	method: 'GET',
-	headers: {
-		'X-RapidAPI-Key': '6b19242e27mshaaddac799972dfep1bbe51jsnba083ea5c7fd',
-		'X-RapidAPI-Host': 'spott.p.rapidapi.com'
-	}
-};
+// const options = {
+// 	method: 'GET',
+// 	headers: {
+// 		'X-RapidAPI-Key': '6b19242e27mshaaddac799972dfep1bbe51jsnba083ea5c7fd',
+// 		'X-RapidAPI-Host': 'spott.p.rapidapi.com'
+// 	}
+// };
 
-fetch('https://spott.p.rapidapi.com/places/autocomplete?limit=10&skip=0&country=US%2CCA&q=miami&type=CITY', options)
-	.then(response => response.json())
-	.then(response => console.log(response))
-	.catch(err => console.error(err));
+// fetch('https://spott.p.rapidapi.com/places/autocomplete?limit=10&skip=0&country=US%2CCA&q=miami&type=CITY', options)
+// 	.then(response => response.json())
+// 	.then(response => console.log(response))
+// 	.catch(err => console.error(err));
 
   // let url = "https://spott.p.rapidapi.com/places/autocomplete?limit=10&skip=0&country=US%2CCA&q=" + input + "&type=CITY";
 
-var search_terms = ['apple', 'apple watch', 'apple macbook', 'apple macbook pro', 'iphone', 'iphone 12'];
+// var search_terms = ['apple', 'apple watch', 'apple macbook', 'apple macbook pro', 'iphone', 'iphone 12'];
 
-function autocompleteMatch(input) {
-  if (input == '') {
-    return [];
-  }
-  var reg = new RegExp(input)
-  return city_names.filter(function(term) {
-	  if (term.match(reg)) {
-  	  return term;
-	  }
-  });
-}
-
-function showResults(val) {
-  res = document.getElementById("result");
-  res.innerHTML = '';
-  let list = '';
-  let apiUrl = "https://spott.p.rapidapi.com/places/autocomplete?limit=10&skip=0&country=US%2CCA&q="+ val + "&type=CITY";
-  fetch(apiUrl)
-    .then(function(response){
-        if(response.ok){
-                response.json().then(function(data){
-                    console.log(data);
-                    for(i=0; i < data.length; i++){
-                        list += `<li> + ${data[i].name} + </li>`
-                    }
-                    res.innerHTML = `<ul> + ${list} + </ul>`
-                })
-        }else{
-            console.log("Error: " + response.statusText)
-        }
-    })
-//   let terms = autocompleteMatch(val);
-//   for (i=0; i<terms.length; i++) {
-//     list += '<li>' + terms[i] + '</li>';
+// function autocompleteMatch(input) {
+//   if (input == '') {
+//     return [];
 //   }
-//   res.innerHTML = '<ul>' + list + '</ul>';
-};
+//   var reg = new RegExp(input)
+//   return city_names.filter(function(term) {
+// 	  if (term.match(reg)) {
+//   	  return term;
+// 	  }
+//   });
+// }
+
+// function showResults(val) {
+//   res = document.getElementById("result");
+//   res.innerHTML = '';
+//   let list = '';
+//   let apiUrl = "https://spott.p.rapidapi.com/places/autocomplete?limit=10&skip=0&country=US%2CCA&q="+ val + "&type=CITY";
+//   fetch(apiUrl)
+//     .then(function(response){
+//         if(response.ok){
+//                 response.json().then(function(data){
+//                     console.log(data);
+//                     for(i=0; i < data.length; i++){
+//                         list += `<li> + ${data[i].name} + </li>`
+//                     }
+//                     res.innerHTML = `<ul> + ${list} + </ul>`
+//                 })
+//         }else{
+//             console.log("Error: " + response.statusText)
+//         }
+//     })
+// //   let terms = autocompleteMatch(val);
+// //   for (i=0; i<terms.length; i++) {
+// //     list += '<li>' + terms[i] + '</li>';
+// //   }
+// //   res.innerHTML = '<ul>' + list + '</ul>';
+// };
 
 
 // function showResults(val) {
@@ -100,3 +100,81 @@ function showResults(val) {
   //   }
   //   res.innerHTML = '<ul>' + list + '</ul>';
   // }
+
+//   function showResults(val) {
+//     res = document.getElementById("result");
+//     res.innerHTML = '';
+//     if (val == '') {
+//       return;
+//     }
+//     // let list = '';
+//     fetch("https://spott.p.rapidapi.com/places/autocomplete?limit=10&skip=0&country=US%2CCA&q="+ val + "&type=CITY", options)
+//     .then(function (response) {
+//        return response.json();
+//      }).then(function (data) {
+//        for (i=0; i<data.length; i++) {
+//          renderResults(data)
+//        };
+//        return true;
+//      }).catch(function (err) {
+//        console.warn('Something went wrong.', err);
+//        return false;
+//      });
+//   };
+
+// function renderResults (data){
+//  if(input.value === ""){
+//   return
+//  }else{
+//   let results = document.getElementById("result");
+//   let li = document.createElement("li");
+
+//   li.className = "suggestion";
+//   li.textContent = data[i].name;
+
+//   results.appendChild(li);
+
+//  }
+
+// };
+
+// let suggestions = document.querySelectorAll(".suggestion");
+// let input = document.getElementById("input");
+
+// suggestions.forEach(suggestion => {
+//   suggestion.addEventListener("click", (e) =>{
+//     if(e.target.className === "suggestion"){
+//       console.log("Clicking a suggestion!");
+//     }
+//   })
+// });
+
+// let results = document.getElementById("result");
+
+// results.addEventListener("click", (e)=>{
+//   if(e.target.className === "suggestion"){
+//     let input = document.getElementById("input");
+//     input.value = e.target.textContent;
+//     console.log(input.value);
+//     console.log("Clicking a suggestion!")
+//     setTimeout(() => {
+//       input.value = "";
+//     }, 50);
+//     results.innerHTML = "";
+//   }
+// });
+
+// input.addEventListener("keyup", function(event) {
+//   if (event.key === "Enter") {
+//     results.textContent = "";
+//     let input = document.getElementById("input");
+//     console.log(input.value);
+//     setTimeout(() => {
+//       input.value = "";
+//     }, 50);
+//   }
+// });
+
+// if(input.value === ""){
+//   results.textContent = "";
+// }
