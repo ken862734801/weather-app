@@ -69,10 +69,10 @@
    <div id="searchNav">
           <div class="search-container">
             <div class="searchbar">
-                <!-- <img src="./assets/images/magnifying-glass.png" class="search-icon"> -->
-                <input type="text" id="search-input">
+                <input type="text" id="search-input" autofocus onKeyUp="showResults(this.value)">
+                <img src="./assets/images/close (2).png" id="close-search">
             </div>
-            <img src="./assets/images/close (2).png" id="close-search">
+            <div id="result"></div>
           </div>
    </div>
 

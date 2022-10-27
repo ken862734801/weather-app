@@ -170,6 +170,7 @@ section{
     width:90%;
     margin: 0 auto;
     display:flex;
+    flex-direction: column;
     justify-content: flex-end;
     align-items: center;
     padding-top:15px;
@@ -193,12 +194,19 @@ section{
   }
   .searchbar{
     width:100%;
+    border:1px solid red;
+  }
+  #result{
+    width:80%;
+    margin: 0 auto;
+    border:1px solid red;
   }
   #close-search{
     width:16px;
     height:16px;
     padding-top:5px;
     padding-right:19px;
+    position:absolute;
   }
   .side-title{
     font-size:0.95em;
