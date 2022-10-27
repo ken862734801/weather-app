@@ -187,15 +187,16 @@ document.getElementById('date').textContent = formattedToday;
 let searches = [];
 
 function saveSearch (city){
-    if(searches.includes(city)){
+    if(searches.includes(city)) {
+        return    
+    }else if(searches.length === 7){
         return
-    }else {
+    }else{
         searches.unshift(city);
         getSavedLocation(searches[0]);
         console.log(searches);
-    
     }
-};
+}
 
 
 function getSavedLocation (city){
