@@ -145,6 +145,7 @@ section{
     left: 0;
     background-color: white; /* Black*/
     overflow-x: hidden; /* Disable horizontal scroll */
+    overflow-y: hidden;
     padding-top: 60px; /* Place content 60px from the top */
     transition: 0.3s; /* 0.5 second transition effect to slide in the sidenav */
   }
@@ -200,7 +201,7 @@ section{
     padding-right:19px;
   }
   .side-title{
-    font-size:0.85em;
+    font-size:0.95em;
     margin-bottom:-25px;
     font-weight: bold;
     letter-spacing: 2px;
@@ -223,6 +224,8 @@ section{
   .item-header{
     text-align: center;
     font-size:0.80em;
+    text-transform: uppercase;
+    letter-spacing: 2px;
   }
  .item-image > img{
     width:150px;

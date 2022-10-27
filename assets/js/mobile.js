@@ -190,11 +190,10 @@ function saveSearch (city){
     if(searches.includes(city)){
         return
     }else {
-        searches.push(city);
-        for(i = 0; i < searches.length; i++){
-            getSavedLocation(searches[i]);
-        }
+        searches.unshift(city);
+        getSavedLocation(searches[0]);
         console.log(searches);
+    
     }
 };
 
@@ -208,8 +207,6 @@ function getSavedLocation (city){
                 response.json().then(function(data){
                     latitude = data[0].lat;
                     longitude = data[0].lon;
-                    console.log(city)
-                    console.log(latitude, longitude)
                     getSavedWeather(latitude, longitude)
                 })
             }else{
@@ -226,6 +223,7 @@ function getSavedWeather (latitude, longitude){
             if(response.ok){
                 response.json().then(function(data){
                     console.log(data);
+                    renderSavedCity(data);
                 })
             }else{
                 alert("Error: " + response.statusText)
@@ -234,5 +232,25 @@ function getSavedWeather (latitude, longitude){
 };
 
 function renderSavedCity(data){
+    let gridContainer = document.getElementById("grid-container");
 
+    let widget = document.createElement("div");
+    let widgetHeader = document.createElement("h6");
+    let widgetFigure = document.createElement("figure");
+    let widgetImage = document.createElement("img");
+    let widgetTemp = document.createElement("h6");
+
+    widget.className = "grid-item";
+    widgetHeader.className = "item-header";
+    widgetFigure.className = "item-image";
+    widgetImage.src = "./assets/images/" + data.list[0].weather[0].icon + "-large.png";
+    widgetTemp.className = "item-temp";
+
+    widgetFigure.appendChild(widgetImage);
+
+    widgetHeader.textContent = data.city.name;
+    widgetTemp.innerHTML = `${data.list[0].main.temp.toFixed()}  &#176;`
+
+    gridContainer.appendChild(widget);
+    widget.append(widgetHeader, widgetFigure, widgetTemp);
 };
