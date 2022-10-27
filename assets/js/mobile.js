@@ -255,3 +255,7 @@ function renderSavedCity(data){
     gridContainer.appendChild(widget);
     widget.append(widgetHeader, widgetFigure, widgetTemp);
 };
+
+function setEmptyMessage(){
+    
+}
