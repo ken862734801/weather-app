@@ -214,7 +214,6 @@ section{
     width:90%;
     display:flex;
     justify-content: center;
-    padding-right:25px;
     flex-wrap: wrap;
     margin: 0 auto;
   }
