@@ -140,6 +140,13 @@ section{
 /* The CSS selectors for the search bar and the autocomplete function.*/
 .search-page{
     max-width:400px;
+    position:absolute;
+    height:0;
+    width:100%;
+    bottom:0;
+    background-color: white; 
+    transition: 0.3s; 
+    overflow-x: hidden;
 }
 .search-box{
     position: relative;
@@ -186,7 +193,8 @@ display: none;
 .search-box-wrapper {
     display:flex;
     margin-top:10px;
-    margin-left:12px;
+    padding-top:15px;
+    margin-left:20px;
 }
 .search-box-wrapper > p {
     font-weight: bold;

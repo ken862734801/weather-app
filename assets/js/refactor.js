@@ -1,6 +1,7 @@
 // DOM Element Variables 
 // Variables for the home page section.
 let homePage = document.getElementById("home-page");
+let plus = document.querySelector(".plus");
 // Variables for the search page section.
 let searchPage = document.getElementById("search-page");
 let searchInput = document.getElementById("search-input");
@@ -9,21 +10,23 @@ let cancelBtn = document.getElementById("cancel-btn");
 let results = document.getElementById("result");
 let suggestions = document.querySelectorAll(".suggestion");
 
-// function openSearch (){
-//     searchPage.style.height = "100%";
-//     searchInput.focus();
-//     setTimeout(()=> {
-//         homePage.style.display = "none";
-//     })
-// };
+function openSearch (){
+    searchPage.style.height = "100%";
+    searchInput.focus();
+    setTimeout(()=> {
+        homePage.style.display = "none";
+    },150)
+};
 
-// function closeSearch (){
-//     searchPage.style.height = "0";
-//     homePage.style.display = "block";
-//     searchInput.blur();
-// };
+function closeSearch (){
+    searchPage.style.height = "0";
+    homePage.style.display = "block";
+    searchInput.blur();
+    window.scrollTo(0, 0);
+};
 
-// cancelBtn.addEventListener("click", closeSearch());
+plus.addEventListener("click", openSearch);
+cancelBtn.addEventListener("click", closeSearch);
 
 searchInput.addEventListener("keyup", function(e){
     if(e.key === "Enter"){
@@ -33,6 +36,7 @@ searchInput.addEventListener("keyup", function(e){
             searchInput.value = "";
         }, 50);
         searchInput.blur();
+        closeSearch();
     }
 });
 // Function to clear the autocomplete suggestions.
@@ -103,5 +107,6 @@ results.addEventListener("click", (e)=> {
             searchInput.value = "";
         }, 50);
         results.textContent = "";
+        closeSearch();
     }
 });
