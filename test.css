@@ -94,3 +94,51 @@ input[type="text"]:focus{
   width:12px;
   height:12px;
 }
+
+/* Clearable text inputs */
+.clearable{
+  /* border:1px solid red; */
+  position: relative;
+  display: inline-block;
+}
+.clearable input[type=text]{
+  font-family: 'Comfortaa', cursive;
+  background: transparent;
+  width:290px;
+  margin: 0;
+  padding: 7px 8px;
+  border:none;
+  padding-right: 24px;
+  box-sizing: border-box;
+  font-size:1.15em;
+  display: block;
+  padding: 9px 4px 9px 40px;
+  background: transparent url("./assets/images/searchglass.png") no-repeat 13px center;
+}
+.clearable__clear{
+  display: none;
+  position: absolute;
+  right:0; top:0;
+  padding: 0 8px;
+  font-style: normal;
+  font-size:1.75em;
+  user-select: none;
+  cursor: pointer;
+  font-weight:bold;
+  margin-top:4px;
+}
+.clearable input::-ms-clear {  /* Remove IE default X */
+  display: none;
+}
+.wrapper {
+  display:flex;
+  /* border:1px solid red; */
+}
+.wrapper > p {
+  font-family: 'Comfortaa', cursive;
+    font-weight: bold;
+    margin-left:8px;
+    margin-top:13px;
+    font-size:0.80em;
+    letter-spacing: 1px;
+}

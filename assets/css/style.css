@@ -6,6 +6,8 @@ body{
 }
 .container{
     overflow-x: hidden;
+    max-width:420px;
+    margin: 0 auto;
 }
 header{
     margin-top:10px;

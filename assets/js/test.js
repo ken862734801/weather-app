@@ -178,3 +178,19 @@ city_names = ["Aberdeen", "Abilene", "Akron", "Albany", "Albuquerque", "Alexandr
 // if(input.value === ""){
 //   results.textContent = "";
 // }
+
+$(".clearable").each(function() {
+  
+  const $inp = $(this).find("input:text"),
+      $cle = $(this).find(".clearable__clear");
+
+  $inp.on("input", function(){
+    $cle.toggle(!!this.value);
+  });
+  
+  $cle.on("touchstart click", function(e) {
+    e.preventDefault();
+    $inp.val("").trigger("input");
+  });
+  
+});
