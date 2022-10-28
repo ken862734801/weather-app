@@ -45,7 +45,8 @@ function openSearch (){
 
 function closeSearch (){
     document.getElementById("searchNav").style.height = "0";
-        container.style.display = "block";;
+        container.style.display = "block";
+        search_input.blur();
 
 };
 
