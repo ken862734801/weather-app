@@ -257,6 +257,10 @@ function renderSavedCity(data){
 
     widget.addEventListener("click", function(){
         getLocation(widgetHeader.textContent);
+        for(i=0; i < searches.length; i++){
+            gridContainer.textContent = "";
+            getSavedLocation(searches[i]);
+        }
         closeNav();
     })
 };
