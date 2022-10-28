@@ -1,3 +1,26 @@
+// DOM Element Variables 
+let searchInput = document.getElementById("search-input");
+let clearBtn = document.getElementById("clear-btn");
+let cancelBtn = document.getElementById("clean-btn");
+let results = document.getElementById("result");
+let suggestions = document.querySelectorAll(".suggestion");
+
+searchInput.addEventListener("keyup", function(e){
+    if(e.key === "Enter"){
+        clearResult();
+        console.log(searchInput.value);
+        setTimeout(() => {
+            searchInput.value = "";
+        }, 50);
+        searchInput.blur();
+    }
+});
+// Function to clear the autocomplete suggestions.
+function clearResult(){
+    results.textContent = "";
+};
+
+
 // Function to reveal X, and clear search bar on click.
 $(".search-box").each(function(){
 
@@ -10,6 +33,7 @@ $(".search-box").each(function(){
 
         $clear.on("touchstart click", function(e){
             e.preventDefault();
+            clearResult();
             $input.val("").trigger("input");
         })
 });
@@ -34,10 +58,32 @@ function autocompleteMatch(input) {
 function showResults(val) {
     res = document.getElementById("result");
     res.innerHTML = '';
-    let list = '';
     let terms = autocompleteMatch(val);
         for (i=0; i<terms.length; i++) {
-            list += '<li>' + terms[i] + '</li>';
+            renderResults(terms)
         }
-    res.innerHTML = '<ul>' + list + '</ul>';
 };
+
+function renderResults(data){
+    if(searchInput.value === ""){
+        return
+    }else{
+        let li = document.createElement("li");
+        li.textContent = data[i];
+
+        li.className = "suggestion";
+        results.appendChild(li);
+    }
+};
+
+// Function to allow the user to click a suggestion and record the input. 
+results.addEventListener("click", (e)=> {
+    if(e.target.className === "suggestion"){
+        searchInput.value = e.target.textContent;
+        console.log(searchInput.value);
+        setTimeout(()=> {
+            searchInput.value = "";
+        }, 50);
+        results.textContent = "";
+    }
+});
