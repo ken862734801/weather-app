@@ -30,7 +30,12 @@ navbar{
     text-align: center;
     text-transform: uppercase;
 }
-
+.date{
+  text-align:center;
+  font-size:0.95em;
+  font-weight: bold;
+  letter-spacing: 2px;
+}
 .weather{
     font-size: 1.10em;
     font-weight: bold;
@@ -293,12 +298,7 @@ section{
     font-weight: bold;
     margin-top:-55px;
  }
- .date{
-    text-align:center;
-    font-size:0.95em;
-    font-weight: bold;
-    letter-spacing: 2px;
- }
+
 
  @media screen and (-webkit-min-device-pixel-ratio:0) { 
     select,

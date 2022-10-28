@@ -1,10 +1,141 @@
 *{
     font-family: 'Comfortaa', cursive;
-};
+}
 body{
     min-height:100vh;
-};
-
+}
+/* The CSS selectors for the home page. */
+.home-page{
+    overflow-x: hidden;
+    max-width:420px;
+    margin: 0 auto;
+}
+header{
+    margin-top:10px;
+    margin-bottom:40px;
+}
+navbar{
+    width:90%;
+    margin: 0 auto;
+    display:flex;
+    justify-content: space-between;
+    align-items: center;
+}
+#city{
+    font-size: 1.10em;
+    font-weight: bold;
+    letter-spacing: 2px;
+    padding-top:10px;
+    margin-top:10px;
+    text-align: center;
+    text-transform: uppercase;
+}
+.date{
+    text-align:center;
+    font-size:0.95em;
+    font-weight: bold;
+    letter-spacing: 2px;
+ }
+.weather{
+    font-size: 1.10em;
+    font-weight: bold;
+    letter-spacing: 3px;
+    margin-bottom:-70px;
+    text-align: center;
+    text-transform: uppercase;
+}
+figure{
+    display: flex;
+    justify-content: center;
+    margin-bottom:-20px;
+    margin-top:-10px;
+    padding-bottom:15px;
+}
+figure > img {
+    width:425px;
+}
+section{
+    display: flex;
+    justify-content: center;
+}
+.main-forecast{
+    padding-top:20px;
+    margin-top:-145px;
+    display:flex;
+    align-items: center;
+    padding-bottom:20px;
+}
+.temperature-display{
+    display:flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding:30px;
+    padding-top:50px;
+    margin-bottom:-50px;
+}
+#temperature{
+    margin-top:5px;
+    font-size:4em;
+    text-align: center;
+    letter-spacing: 3px;
+    margin-bottom:-15px;
+}
+.arrow{
+    color:rgb(56, 56, 56);
+}
+.secondary-temperature{
+    display:flex;
+}
+.secondary-temperature > p{
+    margin-left:5px;
+}
+.information-display{
+    width:40%;
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-bottom:-30px;
+}
+.detail{
+    border-bottom:1px solid rgb(160, 159, 159);
+    width:75%;
+    margin-bottom:-1px;
+    padding-bottom:5px;
+    font-size: 0.80em;
+}
+.row{
+    display:flex;
+    margin-bottom:-20px;
+}
+.row > p{
+    font-size: 0.80em;
+}
+.feels-like{
+    margin-left:7px;
+}
+.humidity{
+    margin-left:14px;
+}
+.pressure{
+    margin-left:13px;
+}
+.wind{
+    margin-left: 46px;
+}
+.day-display, .time-display{
+    font-size: 1.15em;
+    font-weight: bold;
+    letter-spacing: 3px;
+    border-top:1px solid rgb(160, 159, 159);
+    width:60%;
+    padding:12px;
+    margin: 0 auto;
+    margin-top:15px;
+    text-transform:uppercase ;
+}
+.time-display{
+    margin-top:-5px;
+}
 
 /* The CSS selectors for the search bar and the autocomplete function.*/
 .search-page{

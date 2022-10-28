@@ -1,9 +1,29 @@
 // DOM Element Variables 
+// Variables for the home page section.
+let homePage = document.getElementById("home-page");
+// Variables for the search page section.
+let searchPage = document.getElementById("search-page");
 let searchInput = document.getElementById("search-input");
 let clearBtn = document.getElementById("clear-btn");
-let cancelBtn = document.getElementById("clean-btn");
+let cancelBtn = document.getElementById("cancel-btn");
 let results = document.getElementById("result");
 let suggestions = document.querySelectorAll(".suggestion");
+
+// function openSearch (){
+//     searchPage.style.height = "100%";
+//     searchInput.focus();
+//     setTimeout(()=> {
+//         homePage.style.display = "none";
+//     })
+// };
+
+// function closeSearch (){
+//     searchPage.style.height = "0";
+//     homePage.style.display = "block";
+//     searchInput.blur();
+// };
+
+// cancelBtn.addEventListener("click", closeSearch());
 
 searchInput.addEventListener("keyup", function(e){
     if(e.key === "Enter"){
@@ -19,7 +39,6 @@ searchInput.addEventListener("keyup", function(e){
 function clearResult(){
     results.textContent = "";
 };
-
 
 // Function to reveal X, and clear search bar on click.
 $(".search-box").each(function(){
@@ -37,7 +56,6 @@ $(".search-box").each(function(){
             $input.val("").trigger("input");
         })
 });
-
 
 // Functions to log the user input and then show the results in a list. 
 //Temporary array of cities, will be using the SPOTT API to fetch json information of cites.
