@@ -214,7 +214,7 @@ date.textContent = formattedToday;
 function renderCurrentForecast (data) {
 
     city.textContent = data.city.name;
-    weather.textContent = data.list[0].weather[0].main;
+    weather.textContent = data.list[0].weather[0].description;
     icon.src = "./assets/images/" + data.list[0].weather[0].icon + "-large.png";
     temperature.textContent = data.list[0].main.temp.toFixed();
     tempMin.innerHTML = `<span class="arrow"> &#9660; </span> ${data.list[0].main.temp_min.toFixed()} &#176;`

@@ -273,6 +273,7 @@ li{
   flex-wrap: wrap;
   margin: 0 auto;
   padding-bottom:20px;
+  padding-right:10px;
 }
 .widget{
   width:175px;
