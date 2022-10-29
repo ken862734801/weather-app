@@ -1,7 +1,27 @@
 // DOM Element Variables 
+// Variables for the saved page section.
+let savedPage = document.getElementById("saved-page");
+let closeBtn = document.getElementById("close-btn");
+
 // Variables for the home page section.
 let homePage = document.getElementById("home-page");
 let plus = document.querySelector(".plus");
+let menu = document.querySelector(".menu-bars");
+
+// Dynamic variables for the weather forecast.
+let city = document.getElementById("city");
+let weather = document.getElementById("weather");
+let icon = document.getElementById("icon");
+let temperature = document.getElementById("temperature");
+let tempMax = document.getElementById("temp-max");
+let tempMin = document.getElementById("temp-min");
+let feels_like = document.getElementById("feels-like");
+let humidity = document.getElementById("humidity"); 
+let wind = document.getElementById("wind");
+let pressure = document.getElementById("pressure");
+let day = document.getElementById("day");
+let time = document.getElementById("time");
+
 // Variables for the search page section.
 let searchPage = document.getElementById("search-page");
 let searchInput = document.getElementById("search-input");
@@ -108,5 +128,21 @@ results.addEventListener("click", (e)=> {
         }, 50);
         results.textContent = "";
         closeSearch();
+        searchInput.blur();
     }
 });
+
+// Functions to open and close the saved page.
+
+function openSaved() {
+    savedPage.style.width = "100%";
+};
+function closeSaved() {
+    savedPage.style.width = "0";
+};
+
+menu.addEventListener("click", openSaved);
+closeBtn.addEventListener("click", closeSaved);
+
+
+//Functions related to weather data.
