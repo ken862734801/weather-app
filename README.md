@@ -28,6 +28,7 @@ The goal of this assignment was to create a weather dashboard using data fetched
      https://rapidapi.com/Spott/api/spott
 
 - The inclusion of a placeholder image or a loading animation while the data is being fetch.
+- The inclusion of visual feedback when a bad request has been made. Currently an error message is logged and the search is returned; however, that is not enough of an indication to the user.
 
 ## Resources
 - This would not have been possible without the Open Weather API:
