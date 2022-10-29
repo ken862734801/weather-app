@@ -142,12 +142,12 @@ results.addEventListener("click", (e)=> {
 function openSaved() {
     savedPage.style.width = "100%";
     setTimeout(()=> {
-        homePage.style.display = "block";
+        homePage.style.display = "none";
     }, 300);
 };
 function closeSaved() {
     savedPage.style.width = "0";
-    homePage.style.display = "none";
+    homePage.style.display = "block";
 };
 
 menu.addEventListener("click", openSaved);
