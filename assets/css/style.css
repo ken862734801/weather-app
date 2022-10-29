@@ -145,7 +145,7 @@ section{
 /* The CSS selectors for the search bar and the autocomplete function.*/
 .search-page{
   max-width:400px;
-  position: fixed;
+  position:absolute;
   height:0;
   width:100%;
   bottom:0;
@@ -240,7 +240,7 @@ li{
   height:100%;
   max-width:410px;
   width: 0; /* 0 width - change this with JavaScript */
-  position: fixed; /* Stay in place */
+  position:absolute; /* Stay in place */
   top: 0; /* Stay at the top */
   background-color: white; /* Black*/
   overflow-x: hidden; /* Disable horizontal scroll */
@@ -256,7 +256,7 @@ li{
   justify-content: flex-end;
 }
 #close-btn{
-  margin-right:-10px;
+  margin-right:-5px;
 }
 .section-title{
   font-size:0.95em;
