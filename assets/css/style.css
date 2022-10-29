@@ -145,7 +145,7 @@ section{
 /* The CSS selectors for the search bar and the autocomplete function.*/
 .search-page{
   max-width:400px;
-  position:absolute;
+  position: fixed;
   height:0;
   width:100%;
   bottom:0;
@@ -216,7 +216,7 @@ background-color: white;
   max-width:400px;
 }
 li{
-  padding: 5px 0;
+  padding: 10px 0;
   list-style-type: none;
   border-bottom:1px solid rgb(160, 159, 159);
   font-size:1.05em;
@@ -229,9 +229,7 @@ li{
 .suggestion{
   font-family: 'Comfortaa', cursive;
   font-size:1.05em;
-  margin-bottom:10px;
-  margin-top:5px;
-  margin: 0 auto;
+  margin: 10px auto;
 }
 #result li:hover {
   background: #eee;
@@ -242,15 +240,13 @@ li{
   height:100%;
   max-width:410px;
   width: 0; /* 0 width - change this with JavaScript */
-  position: absolute; /* Stay in place */
+  position: fixed; /* Stay in place */
   top: 0; /* Stay at the top */
-  left: 0;
   background-color: white; /* Black*/
   overflow-x: hidden; /* Disable horizontal scroll */
   overflow-y: hidden;
   padding-top: 20px; /* Place content 60px from the top */
-  transition: 0.3s; /* 0.5 second transition effect to slide in the sidenav */
-  border:1px solid red;
+  transition: 0.4s; /* 0.5 second transition effect to slide in the sidenav */
   margin: 0 auto;
 }
 .saved-page > nav{
@@ -258,6 +254,9 @@ li{
   margin: 0 auto;
   display:flex;
   justify-content: flex-end;
+}
+#close-btn{
+  margin-right:-10px;
 }
 .section-title{
   font-size:0.95em;
@@ -275,8 +274,8 @@ li{
   flex-wrap: wrap;
   margin: 0 auto;
   height: 100%;
-  border:1px solid red;
   z-index:1000px;
+  padding-bottom:20px;
 }
 .widget{
   width:175px;
