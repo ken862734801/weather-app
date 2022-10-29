@@ -4,9 +4,10 @@
 body{
   min-height:100vh;
 }
-/* .mobile-wrapper{
+.mobile-wrapper{
   max-width:420px;
-} */
+  margin: 0 auto;
+}
 /* The CSS selectors for the home page. */
 .home-page{
   overflow-x: hidden;
@@ -239,6 +240,7 @@ li{
 
 #saved-page{
   height:100%;
+  max-width:410px;
   width: 0; /* 0 width - change this with JavaScript */
   position: absolute; /* Stay in place */
   top: 0; /* Stay at the top */
@@ -247,8 +249,9 @@ li{
   overflow-x: hidden; /* Disable horizontal scroll */
   overflow-y: hidden;
   padding-top: 20px; /* Place content 60px from the top */
-  padding-bottom:60px;
   transition: 0.3s; /* 0.5 second transition effect to slide in the sidenav */
+  border:1px solid red;
+  margin: 0 auto;
 }
 .saved-page > nav{
   width:85%;
@@ -271,6 +274,9 @@ li{
   justify-content: center;
   flex-wrap: wrap;
   margin: 0 auto;
+  height: 100%;
+  border:1px solid red;
+  z-index:1000px;
 }
 .widget{
   width:175px;
