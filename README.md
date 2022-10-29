@@ -12,9 +12,11 @@ https://ken862734801.github.io/weather-app/
 The goal of this assignment was to create a weather dashboard using data fetched from the Open Weather API. Instead of a dashboard, I opted to develop a "mobile app" based on a design I encountered on behance. This was my first time designing something completely with mobile in mind, and I definitely plan on revisiting this project when I learn a framework more suited for mobile developement. With regard to implementation of the API, the process of fetching data from the API was relatively simple.
 
 ## Features
-- Dynamic icons depending on weather conditions and the time of day. 
+- Dynamic icons depending on weather conditions and time of day. 
+- Dynamic date and message depending on the time of day.
 - Autocomplete matching user input in the searchbar.  
 - The most recent searches are stored in local storage and are rendered as widgets.
+- Widgets can be clicked on to re-render the main forecast on the home page.
 
 ## Future Development
 - Open Weather API currently provides a 5 day forecast; however, currently this only displays the current weather at the searched location. In the future I would like to include a   carousel at the day location, in which, the user can swipe and be given the forecast for the following day. 
