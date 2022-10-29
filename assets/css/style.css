@@ -233,6 +233,7 @@ li{
   font-family: 'Comfortaa', cursive;
   font-size:1.05em;
   margin: 10px auto;
+  cursor: pointer;
 }
 #result li:hover {
   background: #eee;
