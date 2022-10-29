@@ -240,7 +240,7 @@ li{
 /* CSS Selectors for the saved page. */
 
 #saved-page{
-  height:90vh;
+  height:95vh;
   max-width:410px;
   width: 0; /* 0 width - change this with JavaScript */
   position: absolute; /* Stay in place */
