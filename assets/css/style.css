@@ -256,9 +256,7 @@ li{
   display:flex;
   justify-content: flex-end;
 }
-#close-btn{
-  margin-right:-5px;
-}
+
 .section-title{
   font-size:0.95em;
   margin-bottom:-25px;
