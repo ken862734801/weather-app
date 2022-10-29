@@ -250,8 +250,10 @@ li{
   overflow-x: hidden; /* Disable horizontal scroll */
   overflow-y: hidden;
   padding-top: 20px; /* Place content 60px from the top */
+  padding-bottom:20px;
   transition: 0.3s; /* 0.5 second transition effect to slide in the sidenav */
   margin: 0 auto;
+  z-index:1000px;
 }
 .saved-page > nav{
   width:85%;
