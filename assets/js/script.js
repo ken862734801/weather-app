@@ -147,7 +147,7 @@ function openSaved() {
 };
 function closeSaved() {
     savedPage.style.width = "0";
-    homePage.style.display = "block";
+    homePage.style.display = "none";
 };
 
 menu.addEventListener("click", openSaved);
