@@ -35,9 +35,7 @@ let suggestions = document.querySelectorAll(".suggestion");
 function openSearch (){
     searchPage.style.height = "100%";
     searchInput.focus();
-    setTimeout(()=> {
-        homePage.style.display = "none";
-    }, 50)
+    homePage.style.display = "none"
 };
 
 function closeSearch (){
@@ -223,9 +221,6 @@ function renderCurrentForecast (data) {
     humidity.textContent = `${data.list[0].main.humidity} %`
     wind.textContent = `${data.list[0].wind.speed.toFixed()} mph`;
     pressure.textContent = `${data.list[0].main.pressure}`
-
-    let currentTime = new Date(data.list[0].dt * 1000);
-    let hour = currentTime.getHours();
  
     getLocalTime(data.city.timezone);
     setMessage();
