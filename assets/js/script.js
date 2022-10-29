@@ -37,7 +37,7 @@ function openSearch (){
     searchInput.focus();
     setTimeout(()=> {
         homePage.style.display = "none";
-    },150)
+    }, 50)
 };
 
 function closeSearch (){
@@ -226,15 +226,29 @@ function renderCurrentForecast (data) {
 
     let currentTime = new Date(data.list[0].dt * 1000);
     let hour = currentTime.getHours();
-    setMessage(hour);
+ 
+    getLocalTime(data.city.timezone);
+    setMessage();
     
 };
 getLocation("Miami");
 
-function setMessage (hour){
-    if(hour < 12){
+let newTime;
+function getLocalTime (timezone){
+    let time = new Date ();
+    let localTime = time.getTime();
+    let localOffset = time.getTimezoneOffset() * 60000;
+    let utc = localTime + localOffset;
+    let city = utc + (1000 * + timezone)
+    newTime = parseInt(new Date(city).getHours());
+    console.log(newTime);
+    return newTime
+};
+
+function setMessage (){
+    if(newTime < 12){
         time.textContent = "MORNING";
-    }else if (hour < 18){
+    }else if (newTime < 18){
         time.textContent = "AFTERNOON";
     }else{
         time.textContent = "EVENING";
@@ -346,3 +360,22 @@ function renderStoredSearches (){
     }
 }
 renderStoredSearches();
+
+// d = new Date()
+// localTime = d.getTime()
+// localOffset = d.getTimezoneOffset() * 60000
+// utc = localTime + localOffset
+// var atlanta = utc + (1000 * -25200)
+// nd = new Date(atlanta)
+// console.log(nd);
+
+// function getLocalTime (timezone){
+//     let time = new Date ();
+//     let localTime = time.getTime();
+//     let localOffset = time.getTimezoneOffset() * 60000;
+//     let utc = localTime + localOffset;
+//     let city = utc + (1000 * + timezone)
+//     let newTime = new Date(city).getHours();
+//     console.log(newTime.getHours());
+//     return newTime
+// };
