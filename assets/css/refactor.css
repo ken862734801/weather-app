@@ -24,6 +24,7 @@ navbar{
     justify-content: space-between;
     align-items: center;
 }
+
 #city{
     font-size: 1.10em;
     font-weight: bold;
@@ -254,6 +255,9 @@ li{
     margin: 0 auto;
     display:flex;
     justify-content: flex-end;
+  }
+  #close-btn{
+    cursor: pointer;
   }
   .section-title{
     font-size:0.95em;

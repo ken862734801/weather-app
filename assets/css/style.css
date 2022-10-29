@@ -25,6 +25,9 @@ navbar{
   justify-content: space-between;
   align-items: center;
 }
+.menu-bars, .plus, #clear-btn, #close-btn, #cancel-btn{
+  cursor: pointer;
+}
 #city{
   font-size: 1.10em;
   font-weight: bold;
@@ -277,6 +280,7 @@ li{
 }
 .widget{
   width:175px;
+  cursor:pointer;
 }
 .widget-header{
   text-align: center;

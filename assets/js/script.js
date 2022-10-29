@@ -246,20 +246,22 @@ function saveSearch (city){
     if(searches.includes(city)) {
         return    
     }else if(searches.length === 6){
-        searches.splice(5,1);
-        searches.unshift(city);
+        searches.splice(0,1);
+        searches.push(city);
+        localStorage.setItem("cities", JSON.stringify(searches))
         widgetContainer.textContent = "";
         for(i =0; i < searches.length; i++){
             getSavedLocation(searches[i]);
             console.log(searches)
         }
     }else{
-        searches.unshift(city);
+        searches.push(city);
         widgetContainer.textContent = "";
         for(i =0; i < searches.length; i++){
             getSavedLocation(searches[i]);
             console.log(searches)
         }
+        localStorage.setItem("cities", JSON.stringify(searches))
     }
 };
 
@@ -329,3 +331,17 @@ function renderSavedCity(data){
         closeSaved();
     })
 };
+
+
+
+function renderStoredSearches (){
+    let storedSearches = JSON.parse(localStorage.getItem("cities"));
+    if(storedSearches !== null){
+        for(i=0; i< storedSearches.length; i++){
+            getSavedLocation(storedSearches[i])
+        }
+    }else{
+        return
+    }
+}
+renderStoredSearches();
