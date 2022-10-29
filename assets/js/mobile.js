@@ -196,7 +196,7 @@ function saveSearch (city){
             console.log(searches)
         }
     }
-}
+};
 
 
 function getSavedLocation (city){
