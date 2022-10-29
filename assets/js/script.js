@@ -229,6 +229,7 @@ function renderCurrentForecast (data) {
     setMessage(hour);
     
 };
+getLocation("Miami");
 
 function setMessage (hour){
     if(hour < 12){
