@@ -27,6 +27,10 @@ The goal of this assignment was to create a weather dashboard using data fetched
 
      https://rapidapi.com/Spott/api/spott
 
+     ### UPDATE!
+
+     The Spott API was relatively simple to implement and now the autocomplete has a more complete list of city options. Unfortunately there is a hard limit on requests; however, when the threshold has been hit, the autocomplete will fall back on the hard coded array.
+
 - The inclusion of a placeholder image or a loading animation while the data is being fetch.
 - The inclusion of visual feedback when a bad request has been made. Currently an error message is logged and the search is returned; however, that is not enough of an indication to the user.
 
