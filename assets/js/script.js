@@ -81,6 +81,20 @@ $(".search-box").each(function(){
             $input.val("").trigger("input");
         })
 });
+// Elements related to the autocomplete functionality.
+
+const options = {
+	method: 'GET',
+	headers: {
+		'X-RapidAPI-Key': '3b1c514fd5msh008f6b5969378c2p1fc1b8jsnc954fe15b8f8',
+		'X-RapidAPI-Host': 'spott.p.rapidapi.com'
+	}
+};
+
+// fetch('https://spott.p.rapidapi.com/places/autocomplete?limit=10&skip=0&country=US%2CCA&q=Sea&type=CITY', options)
+	// .then(response => response.json())
+	// .then(response => console.log(response))
+	// .catch(err => console.error(err));
 
 // Functions to log the user input and then show the results in a list. 
 //Temporary array of cities, will be using the SPOTT API to fetch json information of cites.
@@ -98,15 +112,28 @@ function autocompleteMatch(input) {
     });
 };
 
-function showResults(val) {
-    res = document.getElementById("result");
-    res.innerHTML = '';
-    let terms = autocompleteMatch(val);
-        for (i=0; i<terms.length; i++) {
-            renderResults(terms)
-        }
-};
+// function showResults(val) {
+//     res = document.getElementById("result");
+//     res.innerHTML = '';
+    // let terms = autocompleteMatch(val);
+    //     for (i=0; i<terms.length; i++) {
+    //         renderResults(terms)
+    //     }
+// };
 
+// Function to render the data from the API.
+function renderResultsAPI(data){
+    if(searchInput.value === ""){
+        return
+    }else{
+        let li = document.createElement("li");
+        li.textContent = data.name;
+
+        li.className = "suggestion";
+        results.appendChild(li);
+    }
+};
+// Function to render the data from the hardcoded array as a back up.
 function renderResults(data){
     if(searchInput.value === ""){
         return
@@ -118,6 +145,32 @@ function renderResults(data){
         results.appendChild(li);
     }
 };
+
+  function showResults(val) {
+    res = document.getElementById("result");
+    res.innerHTML = '';
+    if (val == '') {
+      return;
+    }
+    fetch("https://spott.p.rapidapi.com/places/autocomplete?limit=10&skip=0&country=US%2CCA&q="+ val + "&type=CITY", options)
+    .then(function (response) {
+       return response.json();
+     }).then(function (data) {
+        console.log(data);
+       for (i=0; i<data.length; i++) {
+         renderResultsAPI(data[i])
+       };
+       return true;
+     }).catch(function (err) {
+       console.warn('Something went wrong.', err);
+       let terms = autocompleteMatch(val);
+       for (i=0; i<terms.length; i++) {
+           renderResults(terms)
+       }
+       return false;
+     });
+  };
+
 
 // Function to allow the user to click a suggestion and record the input. 
 results.addEventListener("click", (e)=> {
